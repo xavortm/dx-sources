@@ -1,0 +1,80 @@
+.dxsources-row {
+	display: block;
+	width: 100%;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #f0f0f0;
+	padding-bottom: 10px;
+
+	/* Animating on adding new row */
+	animation-duration: 0.5s;
+	animation-fill-mode: both;
+	animation-name: slideInDown;
+	-moz-animation-name: slideInDown;
+}
+
+.dxsources-row:hover .delete {
+	color: red;
+}
+
+.dxsources-cell {
+	width: 25%;
+	margin-left: 5%;
+	display: inline-block;	
+}
+
+.dxsources-cell:first-of-type {
+	margin-left: 0;
+}
+
+.dxsources-cell.delete {
+	color: #eee;
+	font-weight: bold;
+	float: right;
+	width: 50px;
+	margin-top: 26px;
+	cursor: pointer;
+}
+
+.dxsources-label {
+	display: block;
+	margin-bottom: 5px;
+	font-size: 13px;
+}
+
+.dxsources-label .required {
+	color: red;
+	font-weight: bold;
+	font-size: 10px;
+}
+
+.dxsources-input {
+
+}
+
+
+
+@keyframes slideInDown {
+	from {
+		transform: translate3d(0, -100%, 0);
+		visibility: visible;
+		opacity: 0;
+	}
+
+	to {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes slideInDown {
+	from {
+		transform: translate3d(0, -100%, 0);
+		visibility: visible;
+		opacity: 0;
+	}
+
+	to {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+}
