@@ -104,11 +104,16 @@ class DX_Sources_Admin {
 	 * is not filled notice will appear on clicking "save post".
 	 */
 	private function print_field_elements( $count, $array = null ) {
+			
+		// Used for animating the add fields action
+		$display = '';
+
+		// If null its called from the jQuery
 		if ( null === $array ) {
-			// If null its called from the jQuery
 			$url = '';
 			$name = '';
 			$description = '';
+			$display = "style='display: none;'";
 		} else {
 			$url = empty( $array['url'] ) ? '' : $array['url'];
 			$name = empty( $array['name'] ) ? '' : $array['name'];
@@ -118,7 +123,7 @@ class DX_Sources_Admin {
 		// Final output markup
 		$html = '';
 
-		$html .= "<div class='dxsources-row'>";
+		$html .= "<div class='dxsources-row' {$display}>";
 		$html .= 	"<div class='dxsources-cell'><label class='dxsources-label' for='dx_sources[{$count}][name]'>Source Name <span class='required'>*</span></label>";
 		$html .= 	"<input class='dxsources-input widefat' type='text' value='{$name}' name='dx_sources[{$count}][name]' required /></div>";
 
@@ -184,7 +189,7 @@ class DX_Sources_Admin {
 					var inputFields = "<?php echo $fields_stripped ?>".replace( /count/g, count );
 					
 					// Append the input fields.
-					$( '.fields-wrapper' ).append( inputFields );
+					$(inputFields).appendTo( $( '.fields-wrapper' ) ).slideDown();
 
 					count++;
 					return false;

@@ -8,8 +8,8 @@
 	/* Animating on adding new row */
 	animation-duration: 0.5s;
 	animation-fill-mode: both;
-	animation-name: slideInDown;
-	-moz-animation-name: slideInDown;
+	/*animation-name: slideInDown;
+	-moz-animation-name: slideInDown;*/
 }
 
 .dxsources-row:hover .delete {
