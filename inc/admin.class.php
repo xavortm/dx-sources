@@ -4,6 +4,9 @@
  * Create the single post dashboard view's metaboxes for adding
  * the list of sources for each post. The metabox is "repeatable" field
  * so the user can add unlimited ammount of sources without refreshing the page.
+ * 
+ * @package DXSources
+ * @since  v1.0.0
  */
 class DX_Sources_Admin {
 

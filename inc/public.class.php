@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Printing the data added from the single post editor to the front-end
+ * after the post's content using the_content filter.
+ * 
+ * @package DXSources
+ * @since v.1.0.0
+ */
 class DX_Sources_Public {
 
 	public function __construct() {
@@ -29,18 +36,17 @@ class DX_Sources_Public {
 
 		// Init any variables to be used.
 		$sources = $output = '';
-		$count = 0;
-
 		$sources = get_post_meta( $post->ID, 'dx_sources' );
+		$count = 0;
 		
 		$output .= "<ul class='dxsources'>";
 
 		if ( 0 < count( $sources ) ) {
-			foreach ( ( array ) $sources as $item ) {
-				if ( ! empty( $item[$count]["name"] ) ) {
-					$output .= $this->generate_source_item( $item[$count], $count );
-					$count++;
+			foreach ( ( array ) $sources[0] as $item ) {
+				if ( ! empty( $item["name"] ) ) {
+					$output .= $this->generate_source_item( $item, $count );
 				}
+				$count++;
 			}
 		}
 
