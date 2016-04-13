@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: DX Sources
- * Description: Easily add the sources for your articles in the end of a post.
- * Version: 1.0.0
+ * Description: Easily add the sources for your articles in the end of a post and link them through dxs-<number> ID for fast reader's navigation.
+ * Version: 1.1.0
  * Author: DevriX
  */
 

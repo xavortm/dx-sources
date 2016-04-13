@@ -124,7 +124,7 @@ class DX_Sources_Admin {
 		$html = '';
 
 		$html .= "<div class='dxsources-row' {$display}>";
-		$html .= 	"<div class='dxsources-cell'><label class='dxsources-label' for='dx_sources[{$count}][name]'>Source Name <span class='required'>*</span></label>";
+		$html .= 	"<div class='dxsources-cell'><label class='dxsources-label' for='dx_sources[{$count}][name]'>[{$count}] Source Name <span class='required'>*</span></label>";
 		$html .= 	"<input class='dxsources-input widefat' type='text' value='{$name}' name='dx_sources[{$count}][name]' required /></div>";
 
 		$html .= 	"<div class='dxsources-cell'><label class='dxsources-label' for='dx_sources[{$count}][url]'>Link URL</label>";
@@ -184,9 +184,11 @@ class DX_Sources_Admin {
 					<?php 
 					// The output must be all on one line for the JS to print it properly.
 					$fields_stripped = implode( '', explode( "\n", $this->print_field_elements( 'count' ) ) ); ?>
+					console.log( count );
 
 					// Needed for nicer animation
 					var inputFields = "<?php echo $fields_stripped ?>".replace( /count/g, count );
+
 					
 					// Append the input fields.
 					$(inputFields).appendTo( $( '.fields-wrapper' ) ).slideDown();
@@ -194,6 +196,7 @@ class DX_Sources_Admin {
 					count++;
 					return false;
 				});
+
 
 				// Action for deleting the fields.
 				$( '#dx-sources-metabox' ).on( "click", ".dxsources-delete-item", function( event ) {
