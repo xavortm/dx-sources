@@ -13,11 +13,6 @@ class DX_Sources_Admin {
 	}
 
 	/**
-	 * Call all the hooks for the plugin.
-	 */
-	public function run() {}
-
-	/**
 	 * Register all required actions for the plugin.
 	 */
 	private function add_actions() {
@@ -47,7 +42,7 @@ class DX_Sources_Admin {
 
 	/**
 	 * Render the input fields for the meta box.
-	 * 
+	 *
 	 * @param WP_Post $post Current post object.
 	 */
 	public function metabox_render( $post ) {
@@ -60,7 +55,7 @@ class DX_Sources_Admin {
 
 	/**
 	 * Save meta box content.
-	 * 
+	 *
 	 * @param int $post_id Post ID
 	 */
 	public function metabox_save( $post_id, $post ) {
@@ -104,7 +99,7 @@ class DX_Sources_Admin {
 	 * is not filled notice will appear on clicking "save post".
 	 */
 	private function print_field_elements( $count, $array = null ) {
-			
+
 		// Used for animating the add fields action
 		$display = '';
 
@@ -181,7 +176,7 @@ class DX_Sources_Admin {
 				// Add new field button.
 				$('.dxsources-add').on("click", function() {
 
-					<?php 
+					<?php
 					// The output must be all on one line for the JS to print it properly.
 					$fields_stripped = implode( '', explode( "\n", $this->print_field_elements( 'count' ) ) ); ?>
 					console.log( count );
@@ -189,7 +184,7 @@ class DX_Sources_Admin {
 					// Needed for nicer animation
 					var inputFields = "<?php echo $fields_stripped ?>".replace( /count/g, count );
 
-					
+
 					// Append the input fields.
 					$(inputFields).appendTo( $( '.fields-wrapper' ) ).slideDown();
 
@@ -204,15 +199,10 @@ class DX_Sources_Admin {
 						$(this).remove();
 					} );
 				} );
+
 			});
 		</script>
 		<?php
-	}
-
-	private function admin_notice( $message = "Notice message", $type = "notice" ) {
-		echo "<div class='notice notice-{$type} is-dismissible'>";
-		echo 	"<p><strong>DX_Sources:</strong> {$message}</p>";
-		echo "</div>";
 	}
 
 }
