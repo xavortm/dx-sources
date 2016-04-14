@@ -3,16 +3,16 @@
  * DX Sources
  * 
  * @package     DXSources
- * @author  	DevriX
- * @copyright   2016 DevriX
+ * @author  	XavorTM
+ * @copyright   2016 XavorTM
  * @license     GPL-2.0+
  * 
  * Plugin Name: DX Sources
  * Plugin URI: https://github.com/xavortm/dx-sources/
  * Description: Easily add the sources for your articles in the end of a post and link them through dxs-<number> ID for fast reader's navigation.
- * Version: 1.1.0
- * Author: DevriX
- * Author URI: http://devrix.com
+ * Version: 1.0.0
+ * Author: Alex Dimitrov
+ * Author URI: http://xavortm.com
  * Text Domain: dxsources
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt

@@ -93,8 +93,20 @@ class DX_Sources_Admin {
 		// Grab the latest input fields data.
 		$fields = $_POST['dx_sources'];
 
+		array_walk_recursive( $fields , array( $this, "array_walk_esc_html" ) );
+
 		// And finaly update the fields
-		update_post_meta( $post_id, 'dx_sources', $fields );
+		if ( ! empty( $fields ) ) {
+			update_post_meta( $post_id, 'dx_sources', $fields );
+		}
+
+	}
+
+	/**
+	 * Escape the fields data
+	 */
+	public function array_walk_esc_html( &$item, $key ) {
+		$item = esc_html( $item );
 	}
 
 	/**

@@ -34,5 +34,5 @@ This section describes how to install the plugin and get it working.
 
 == Changelog ==
 
-= 1.0.0 =
+= 1.0.0 - 4/14/2016 =
 * Initial version of DX Sources
